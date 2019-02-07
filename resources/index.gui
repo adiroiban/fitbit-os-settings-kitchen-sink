@@ -1,0 +1,13 @@
+<svg>
+
+  <use id="output" href="#mixed-text-center-top" height="100%" fill="fb-yellow">
+    <set href="#header/text" attributeName="text-buffer" to="No changes yet"/>
+    <set href="#copy/text" attributeName="text-buffer"
+         to="Use the settings to change different values."/>
+  </use>
+
+  <g id="connection-closed">
+    <rect id="connection-closed-background" />
+    <text id="connection-closed-text">X</text>
+  </g>
+</svg>

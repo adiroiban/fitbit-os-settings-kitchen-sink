@@ -1,0 +1,17 @@
+#connection-closed-text {
+    font-family: "Fabrikat-Black";
+    text-anchor: start;
+    text-length: 1;
+    font-size: 22;
+    fill: "fb-red";
+    x: 34;
+    y: 20;
+}
+
+#connection-closed-background {
+    x: 33;
+    y: 2;
+    height: 20;
+    width: 15;
+    fill: "fb-white";
+}
