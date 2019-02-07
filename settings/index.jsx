@@ -27,16 +27,21 @@ function settingsComponent(props) {
   return (
     <Page>
       <Section
-        description={<Text italic> Italic Section Description with <Link source="https://dev.fitbit.com">a link</Link></Text>}
+        description={<Text italic align="right"> Italic Section Description with <Link source="https://dev.fitbit.com">a link</Link></Text>}
         title={<Text bold align="center">Demo Section Title</Text>}>
+
         <Text>
-          This is a very basic demo settings page to show off some of the current
-          capabilities of the Companion Settings library.
+          This is a very basic <Text bold>demo settings</Text> page to show off some of the current
+          capabilities of the <Text italic>Companion Settings</Text> library.
           For more info see
           <Link source="https://dev.fitbit.com/build/reference/settings-api/"> online docs</Link>
         </Text>
 
-
+        <TextImageRow
+          label="Example text and image"
+          sublabel="With truncated text. I don't see the image in simulator. And what happens with a long text."
+          icon="https://placekitten.com/g/100/100"
+        />
 
       </Section>
 
@@ -44,11 +49,6 @@ function settingsComponent(props) {
         description="Description for another section"
         title="Another simple section">
 
-        <TextImageRow
-          label="Example text and image"
-          sublabel="With truncated text. I don't see the image in simulator. And what happens with a long text."
-          icon="https://placekitten.com/g/100/100"
-        />
 
         <Text>
           {button_click_text}
@@ -59,11 +59,14 @@ function settingsComponent(props) {
         />
 
 
+        <Text>
+          Toggles will produce the string "true" and "false" and not boolean.
+        </Text>
+
         <Toggle
           settingsKey="toggle"
           label={toggle_label}
         />
-
 
         <Slider
           label={slider_text}
@@ -74,12 +77,16 @@ function settingsComponent(props) {
         />
 
 
+        <Text>
+          Text input will produce an object and not a plain string.
+          {props.settingsStorage.getItem('text_input')}
+        </Text>
         <TextInput
           title="Above Text Input"
           label="Example text input"
           placeholder="EMPTY Placeholder"
           action="Do it"
-          settingsKey="text"
+          settingsKey="text_input"
         />
 
         <ColorSelect
@@ -147,7 +154,6 @@ function settingsComponent(props) {
         <AdditiveList
           settingsKey="additive"
         />
-
 
 
         <AdditiveList
